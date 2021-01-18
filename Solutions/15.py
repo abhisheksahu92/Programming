@@ -23,6 +23,7 @@
 import random
 
 def nextpermutation(nums):
+    # print([(a,b,c) for a in [3,2,1] for b in [3,2,1] for c in [3,2,1] if a !=b and b !=c and a!= c])
     minimum = int(''.join(list(map(str,nums)))) + 1
     nums.sort(reverse=True)
     maximum = int(''.join(list(map(str,nums)))) + 1
