@@ -12,11 +12,35 @@
 # output: arr[] = {-5, 5, -2, 2, -8, 4, 7, 1, 8, 0} 
 
 def ordernegativepositive(nums):
-    pass
-    
-                 
+    list_ = []
+    list_2 = []
+    for x in nums:
+        if x < 0:
+            list_.insert(0,x)
+        else:
+            list_.append(x)
+    print(list_)
+    start = 0
+    end = None
+    while True:
+        if list_[start] > 0:
+            end = start - 1
+            break
+        start = start + 1
+
+    while True:
+        if end >= 0:
+            list_2.append(list_[end])
+            list_2.append(list_[start])
+            start =  start + 1
+            end = end - 1
+        else:
+            list_2.extend(list_[start:])
+            break
+    print(list_2) 
+
 if __name__ == '__main__':
-    list_of_values = [[-5, -2, 5, 2, 4, 7, 1, 8, 0, -8]]
+    list_of_values = [[-5, -2, 5, 2, 4, 7, 1, 8, 0, -8],[1, 2, 3, -4, -1, 4]]
     for li in list_of_values:
         print(f'Input is {li}')
         ordernegativepositive(li)
