@@ -2,12 +2,17 @@
 
 def funWithAnagrams(text):
     #Solution 1
-    # d = {}
-    # for x in text:
-    #     temp = ''.join(sorted(x))
-    #     if temp not in d.keys():
-    #         d[temp] = x
-    # print(sorted(d.values()))
+    d = {}
+    for x in text:
+        temp = ''.join(sorted(x.lower()))
+        if temp not in d.keys():
+            d[temp] = [x]
+        else:
+            d[temp].append(x)
+
+    for k,v in d.items():
+        if len(v) > 1:
+            print(v)
 
     #Solution 2 
     # d = {}
@@ -18,25 +23,25 @@ def funWithAnagrams(text):
     #         d[s] = ''
     #         a.append(x)
     # a.sort()
-    # return a
+    # print(a)
 
     #Solution 3
-    x = 0
-    y = 1
-    while True:
-        if x < len(text):
-            if y < len(text):
-                print(text[x],text[y])
-                if sorted(text[x]) == sorted(text[y]):
-                    text.remove(text[y])
-                else:
-                    y = y + 1
-            else:
-                x = x + 1
-                y = x + 1
-        else:
-            print(sorted(text))
-            break
+    # x = 0
+    # y = 1
+    # while True:
+    #     if x < len(text):
+    #         if y < len(text):
+    #             print(text[x].lower(),text[y].lower())
+    #             if sorted(text[x].lower()) == sorted(text[y].lower()):
+    #                 text.remove(text[y])
+    #             else:
+    #                 y = y + 1
+    #         else:
+    #             x = x + 1
+    #             y = x + 1
+    #     else:
+    #         print(sorted(text))
+    #         break
 
 
 
@@ -44,7 +49,7 @@ def funWithAnagrams(text):
 
 if __name__ == '__main__':
     # ['code','aaagmnrs','anagrams','doce'],['poke','pkoe','okpe','ekop']
-    list_of_values = [['code','doce','framer','frame'],['code','aaagmnrs','anagrams','doce'],['poke','pkoe','okpe','ekop']]
+    list_of_values = [['If', 'input', 'is', 'string', 'Hello', 'then', 'string', 'combinations', 'like', 'lleHo', 'LLehO', 'should', 'be', 'considered', 'as', 'anagram']]
     
     for li in list_of_values:
         print(f'Input is {li}')
