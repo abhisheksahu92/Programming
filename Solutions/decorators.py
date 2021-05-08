@@ -13,7 +13,7 @@ def getTime(func):
 def propername():
     print('Abhishek',end=' ')
 
-propername()
+#propername()
 
 # add 2 to every element of list
 def addtwo(func):
