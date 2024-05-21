@@ -15,9 +15,10 @@ def sumsubarray(nums):
     for i in range(1, len(nums)):
         if nums[i - 1] > 0: 
             nums[i] += nums[i - 1]
+        print(nums)
     return max(nums)
 
 if __name__ == '__main__':
-    list_of_values = [1,2,8,-2,1]
+    list_of_values = [1,-5,2,8,2,-2,1]
     print(f'Input: {list_of_values}')
     print(f'Largest subarray sum is {sumsubarray(list_of_values)}')
